@@ -1,0 +1,26 @@
+{
+  "name": "project-music",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/truong1003/project-music.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/truong1003/project-music/issues"
+  },
+  "homepage": "https://github.com/truong1003/project-music#readme",
+  "dependencies": {
+    "dotenv": "^16.4.5",
+    "express": "^4.19.2",
+    "mongoose": "^8.5.1",
+    "path": "^0.12.7",
+    "pug": "^3.0.3"
+  }
+}
