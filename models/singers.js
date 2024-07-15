@@ -3,14 +3,13 @@ const slug = require('mongoose-slug-updater')
 mongoose.plugin(slug)
 const Schema = mongoose.Schema;
 
-const topicsSchema= new Schema({
-    title:String,
+const singersSchema= new Schema({
+    fullName:String,
     avatar:String,
-    description:String,
     status:String,
     slug:{
         type: String,
-        slug: "title",
+        slug: "fullName",
         unique: true
     },
     deleted:{
@@ -22,4 +21,4 @@ const topicsSchema= new Schema({
     timestamps: true
 })
 
-module.exports=mongoose.model('topicsSchema', topicsSchema, 'topics');
+module.exports=mongoose.model('singersSchema', singersSchema, 'singers');
