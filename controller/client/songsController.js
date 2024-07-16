@@ -20,6 +20,24 @@ class index {
             songs:songs
         })
     }
+
+    async detail(req,res){
+        const slug = req.params.slugSong
+
+        const song = await Songs.findOne({slug:slug,status:"active",deleted:false})
+
+        const singer = await Singer.findOne({_id:song.singerId,deleted:false}).select('fullName')
+
+        const topic = await Topics.findOne({_id:song.topicId,deleted:false})
+
+        res.render('client/pages/songs/detail',{
+            titlePage:"Chi tiết bài hát",
+            song : song,
+            singer: singer,
+            topic: topic
+        })
+    }
+
 }   
 
 

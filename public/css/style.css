@@ -106,3 +106,76 @@
     color: #585855;
 }
 /* End Song-item */
+
+/* Detail Singer */
+.singer-detail {
+    .container.my-3 {
+      .row {
+        .col-12 {
+          .inner-title {
+            font-size: 24px;
+            font-weight: bold;
+            color: #f78c16;
+          }
+          .inner-action {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 10px;
+            margin: 10px 0;
+  
+            div {
+              display: flex;
+              align-items: center;
+              gap: 5px;
+              font-size: 14px;
+              color: #666;
+            }
+  
+            .inner-time i,
+            .inner-singer i,
+            .inner-topic i,
+            .inner-like i,
+            .inner-heart i {
+              font-size: 16px;
+              color: #666;
+            }
+          }
+          .inner-play {
+            display: flex;
+            align-items: center;
+            gap: 15px;
+            margin: 15px 0;
+  
+            .inner-avatar img {
+              width: 50px;
+              height: 50px;
+              border-radius: 50%;
+            }
+  
+            .inner-audio audio {
+              /* max-width: 300px; */
+            }
+          }
+          .inner-desc {
+            margin: 10px 0;
+  
+            .inner-label {
+              font-weight: bold;
+              margin-bottom: 5px;
+            }
+  
+            .inner-text {
+              font-size: 14px;
+              color: #333;
+              background: #f9f9f9;
+              padding: 10px;
+              border: 1px solid #eee;
+              border-radius: 5px;
+            }
+          }
+        }
+      }
+    }
+  }
+  
+/* End Detail Singer */
