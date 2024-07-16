@@ -38,6 +38,22 @@ class index {
         })
     }
 
+    async like(req,res){
+        const idSong = req.params.idSong
+        const typeLike=req.params.typeLike
+
+        const song = await Songs.findOne({_id:idSong,status:"active",deleted:false})
+
+        const newLike= typeLike == "like" ? song.like + 1 : song.like -1
+
+        await Songs.updateOne({_id:idSong},{like:newLike})
+
+        res.json({
+            code:200,   
+            message:"Thành công",
+            like:newLike
+        })
+    }
 }   
 
 
