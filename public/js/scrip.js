@@ -47,3 +47,28 @@ if(buttonLike){
     })
 }
 // End Button Like//
+
+// Button Favorite//
+const buttonFavorite=document.querySelector("[button-favorite]")
+if(buttonFavorite){
+    buttonFavorite.addEventListener('click',()=>{
+        const idSong=buttonFavorite.getAttribute('button-favorite')
+        
+        const isActive = buttonFavorite.classList.contains("active")    
+        
+        const typeFavorite = isActive ? "unfavorite" : "favorite"    
+        
+        const link=`/songs/favorite/${typeFavorite}/${idSong}`
+
+        const option={
+            method:"PATCH"
+        }
+
+        fetch(link,option)
+            .then(res=>res.json())
+            .then(data=>{
+                buttonLike.classList.toggle("active")
+            })
+    })
+}
+// End Button Favorite//

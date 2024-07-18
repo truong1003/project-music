@@ -1,6 +1,7 @@
 const Topics = require("../../models/topics")
 const Songs=require("../../models/songs")
 const Singer=require("../../models/singers")
+const FavoriteSong=require("../../models/favorite-songs")
 
 class index {
     async list(req,res){
@@ -52,6 +53,31 @@ class index {
             code:200,   
             message:"Thành công",
             like:newLike
+        })
+    }
+
+    async favorite(req,res){
+        const songId = req.params.idSong
+        const typeFavorite=req.params.typeFavorite
+
+        switch (typeFavorite) {
+            case 'favorite':
+                const exitsFavoriteSong = await FavoriteSong.findOne({songId:songId})
+                if(!exitsFavoriteSong){
+                    const record = new FavoriteSong({userId:"",songId:songId})
+
+                    await record.save()
+                }
+                break;
+        
+            case 'unfavorite':
+                await FavoriteSong.deleteOne({songId:songId})
+                break;
+        }
+
+        res.json({
+            code:200,   
+            message:"Thành công",
         })
     }
 }   

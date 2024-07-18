@@ -18,15 +18,13 @@ block main
                         div(class="inner-action inner-like" button-like=song.id)
                             <i class="fa-solid fa-thumbs-up"></i> 
                             span #{song.like} thích
-                        div(class="inner-action inner-heart")
+                        div(class="inner-action inner-heart" button-favorite=song.id)
                             <i class="fa-regular fa-heart"></i> Bài hát yêu thích 
                         
                     .inner-play 
                         .inner-avatar 
                             img(src=song.avatar)
                         .inner-audio
-                            //- audio(controls)
-                            //-     source(src="https://backend.daca.vn/assets/audios/cat-doi-noi-sau.mp3") 
                             div(id="aplayer" data-song=song data-singer=singer)
                     
                     .inner-desc 
