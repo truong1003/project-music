@@ -7,15 +7,15 @@ block main
                 +box-head(titlePage)
         
         .row
-            each song in songs
+            each item in favoriteSong
                 .col-6.mb-3 
                     div(class="song-item")
                         div(class="inner-image")
-                            a(href=`/songs/detail/${song.slug}`)
-                                img(src=song.avatar)
+                            a(href=`/songs/detail/${item.infoSong.slug}`)
+                                img(src=item.infoSong.avatar)
                         div(class="inner-content")
                             div(class="inner-title")
-                                a(href=`/songs/detail/${song.slug}`) #{song.title}
-                            div(class="inner-singer") <i class="fa-solid fa-microphone-lines"></i> #{song.infoSinger.fullName} 
-                            div(class="inner-heart") <i class="fa-regular fa-heart"></i> Yêu thích
+                                a(href=`/songs/detail/${item.infoSong.slug}`) #{item.infoSong.title}
+                            div(class="inner-singer") <i class="fa-solid fa-microphone-lines"></i> #{item.infoSinger.fullName} 
+                            div(class="inner-heart" button-favorite=item.infoSong.id) <i class="fa-regular fa-heart"></i> Yêu thích
                             div(class="inner-time") <i class="fa-regular fa-clock"></i> Hôm nay 

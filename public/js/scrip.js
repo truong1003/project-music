@@ -67,7 +67,7 @@ if(buttonFavorite){
         fetch(link,option)
             .then(res=>res.json())
             .then(data=>{
-                buttonLike.classList.toggle("active")
+                buttonFavorite.classList.toggle("active")
             })
     })
 }
