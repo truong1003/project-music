@@ -10,5 +10,6 @@ router.patch("/like/:typeLike/:idSong",songssController.like)
 
 router.patch("/favorite/:typeFavorite/:idSong",songssController.favorite)
 
+router.patch("/listen/:idSong",songssController.listen)
 
 module.exports=router

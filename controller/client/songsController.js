@@ -80,6 +80,24 @@ class index {
             message:"Thành công",
         })
     }
+
+    async listen(req,res){
+        const songId = req.params.idSong
+
+        const song = await Songs.findOne({_id: songId})
+
+        const listen = song.listen +1
+
+        await Songs.updateOne({_id:songId},{listen:listen})
+
+        const newSong = await Songs.findOne({_id: songId})
+
+        res.json({
+            code : 200,
+            message:"Thành công",
+            listen:newSong.listen
+        })
+    }
 }   
 
 

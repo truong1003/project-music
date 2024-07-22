@@ -28,10 +28,8 @@ if(Aplayer){
         fetch(link,option)
             .then(res=>res.json())
             .then(data=>{
-                const span=buttonLike.querySelector('span')
-                span.innerHTML=`${data.like} thích`
-
-                buttonLike.classList.toggle("active")
+                const elementListenSpan=document.querySelector(".singer-detail .inner-listen span")
+                elementListenSpan.innerHTML=`${data.listen} lượt nghe`
             })
     })
 }
